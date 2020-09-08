@@ -1,0 +1,7 @@
+server:
+  port: 8888
+
+student:
+  name: 张三
+  age: 17
+  phone: 1379709

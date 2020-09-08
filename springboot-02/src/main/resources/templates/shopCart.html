@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <title>购物车</title>
+</head>
+<body>
+    <div th:if="${user!=null}">欢迎你：<span th:text="${user.username}"></span></div>
+     <table border="1px" align="center">
+        <tr>
+            <td>编号</td>
+            <td>名称</td>
+            <td>数量</td>
+            <td>价格</td>
+            <td>小计</td>
+        </tr>
+        <tr th:each="shop:${shop}">
+            <td th:text="${shop.number}"></td>
+            <td th:text="${shop.tradeName}"></td>
+            <td th:text="${shop.tradeNumber}"></td>
+            <td th:text="${shop.tradeMoeny}"></td>
+            <td th:text="${shop.count}"></td>
+            <td><a th:href="@{/delete/{cid}(cid=${shop.cid})}">删除</a></td>
+        </tr>
+    </table>
+        总计：<span></span><br/>
+        <a>去结算</a>
+</body>
+</html>
